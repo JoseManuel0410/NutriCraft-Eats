@@ -147,34 +147,6 @@ body {
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
-.nombre-seguir button:hover {
-    filter: brightness(110%);
-}
-
-.nombre-seguir button:hover .front {
-    transform: translateY(-6px);
-    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-}
-
-.nombre-seguir button:active .front {
-    transform: translateY(-2px);
-    transition: transform 34ms;
-}
-
-.nombre-seguir button:hover .shadow {
-    transform: translateY(4px);
-    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-}
-
-.nombre-seguir button:active .shadow {
-    transform: translateY(1px);
-    transition: transform 34ms;
-}
-
-.nombre-seguir button:focus:not(:focus-visible) {
-    outline: none;
-}
-
 .datos-usuario {
     display: flex;
     justify-content: space-between;
