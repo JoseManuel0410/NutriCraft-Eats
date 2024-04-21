@@ -1,41 +1,56 @@
 body {
     font-family: "Roboto", sans-serif;
-    font-style: normal;
     background-image: radial-gradient(circle, #D0D0D0, gray);
+    margin: 0;
 }
 
-.header {
-    font-size: 8px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
+.nav {
+    overflow: hidden;
+    background-color: #212121;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
+    justify-content: center;
     width: 100%;
-    padding: 10px 0px;
-    z-index: 1000;
 }
 
-.header h1 {
-    margin-right: auto;
-    font-size: 20px;
-    padding-left: 20px;
-    cursor: pointer;
+.nav img {
+    width: auto;
+    height: 50px;
 }
 
-.header h2 {
-    font-size: 15px;
-    width: 130px;
-    font-weight: 500;
-    cursor: pointer;
+.nav a.logo-empresa:hover {
+    background-color: #212121;
+}
+
+.nav a {
+    float: left;
+    display: flex;
+    color: #ffffff;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav a:hover {
+    background-color: #adadad;
+    color: #333;
+}
+
+.nav a.active {
+    background-color: #ff5100;
+    color: #fff;
+}
+
+.nav .icon {
+    display: none;
 }
 
 .barra-busqueda {
-    margin-top: 7%;
+    margin-top: 2%;
     align-self: center;
     display: flex;
     flex-direction: column;

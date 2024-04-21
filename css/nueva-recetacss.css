@@ -272,6 +272,28 @@ body {
   padding: 10px;
 }
 
+.zona-3 {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.guardar button {
+  width: auto;
+  padding: 10px;
+  background-color:#111926;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.guardar button:hover {
+  filter: brightness(110%);
+  scale: 1.05;
+}
+
 @media screen and (max-width: 620px) {
   .nav a:not(:first-child) {
     display: none;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriCraft Eats</title>
     <link rel="stylesheet" href="/css/indexcss.css">
+    <link rel="icon" type="image/png" href="/imagenes/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,12 +15,15 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1>NutriCraft Eats</h1>
-        <div style="padding-inline-end: 10px; margin-left: auto; display: flex;">
-            <h2>Iniciar sesión</h2>
-            <h2 style="margin-right: 5%;">Registrarse</h2>
-        </div>
+    <div class="nav" id="NavBar">
+        <a href="index.html" class="logo-empresa"><img src="/imagenes/icon.png" alt="icon"></a>
+        <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Inicio</a>
+        <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Buscar</a>
+        <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Iniciar sesión</a>
+        <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Registrarte</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
     <div class="barra-busqueda">
