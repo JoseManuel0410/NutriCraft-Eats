@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/imagenes/icon.png">
+    <link rel="stylesheet" href="/css/recetacss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Nutricraft Eats</title>
+</head>
+
+<body>
+    <div class="nav" id="NavBar">
+        <a href="index.html" class="logo-empresa"><img src="/imagenes/icon.png" alt="icon"></a>
+        <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Inicio</a>
+        <a href="#"><i class="fa fa-fw fa-search"></i>Buscar</a>
+        <a href="perfil-usuario.html"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
+        <a href="nueva-receta.html"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
+        <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="main">
+        <div class="card">
+            <div class="usuario-info">
+                <div>
+                    <img src="/imagenes/user.png" alt="foto-usuario">
+                    <h2>José Manuel</h2>
+                </div>
+                <label for="">Hace 3 dias</label>
+            </div>
+            <div class="etiquetas">
+                <label for="">Alto en proteina</label>
+                <label for="">Saludable</label>
+                <label for="">Dieta</label>
+            </div>
+            <div class="imagenes">
+                <img src="/imagenes/receta-ejemplo-2.jpg" alt="foto-receta">
+            </div>
+            <h2>Ensalada de Pollo</h2>
+            <div class="interacciones">
+                <div>
+                    <button class="botones-int"><i class="fa fa-fw fa-heart-o"></i></button>
+                    <button class="botones-int"><i class="fa fa-fw fa-commenting-o"></i></button>
+                    <button class="botones-int"><i class="fa fa-fw fa-paper-plane-o"></i></button>
+                </div>
+                <button class="botones-int"><i class="fa fa-fw fa-bookmark-o"></i></button>
+            </div>
+            <label for="">98 mil. likes...</label>
+            <div class="com-propio">
+                <input type="text" placeholder="Escribe aqui tu comentario...">
+                <button>send</button>
+            </div>
+            <div class="comentarios">
+                <div class="comentario">
+                    <div class="com-usuario-info">
+                        <div>
+                            <img src="/imagenes/user.png" alt="foto-usuario">
+                            <label>José Manuel</label>
+                        </div>
+                        <label for="">Hace 3 dias</label>
+                    </div>
+                    <p>Que buena receta eres la vrg papá</p>
+                </div>
+                <div class="comentario">
+                    <div class="com-usuario-info">
+                        <div>
+                            <img src="/imagenes/user.png" alt="foto-usuario">
+                            <label>Cesar Abel</label>
+                        </div>
+                        <label for="">Hace 25 min</label>
+                    </div>
+                    <p>Sube más porfa :)</p>
+                </div>
+            </div>
+            <div class="valores-nut">
+                <h2>VALORES NUTRIMENTALES</h2>
+                <ul>
+                    <li>Proteina: 35g</li>
+                    <li>Grasas</li>
+                    <li>Calorias 25kcal</li>
+                </ul>
+            </div>
+            <div class="ingredientes">
+                <h2>Ingredientes</h2>
+                <ul>
+                    <li>Lechuga romana (puede ser también una mezcla de lechugas)</li>
+                    <li>Pan de baguette o pan de caja para crutones</li>
+                    <li>Queso parmesano (preferiblemente fresco)</li>
+                    <li>2 dientes de ajo</li>
+                    <li>Aceite de oliva</li>
+                    <li>Vinagre de vino tinto</li>
+                    <li>Mostaza Dijon</li>
+                    <li>Salsa Worcestershire</li>
+                    <li>1 huevo</li>
+                    <li>Sal y pimienta negra molida</li>
+                </ul>
+            </div>
+            <div class="pasos-receta">
+                <h2>Pasos para elaborar esta receta</h2>
+                <p>1.- Preparación de los crutones:<br>
+                    * Precalienta el horno a 180°C. <br>
+                    * Corta el pan en cubos y colócalos en una bandeja para hornear. <br>
+                    * Rocía los cubos de pan con un poco de aceite de oliva y espolvorea con sal y ajo en polvo. <br>
+                    * Hornea durante unos 10-15 minutos o hasta que estén dorados y crujientes. Reserva. <br> <br>
+                    2.- Preparación de la salsa César: <br>
+                    * En un mortero, machaca los dientes de ajo con un poco de sal hasta formar una pasta. <br>
+                    * En un tazón pequeño, mezcla la pasta de ajo con una cucharada de mostaza Dijon, dos cucharadas de
+                    vinagre de vino tinto y una cucharada de salsa Worcestershire. <br>
+                    * Agrega un huevo y bate bien todos los ingredientes con un batidor de mano o un tenedor hasta que la
+                    mezcla esté suave. <br>
+                    * Poco a poco, incorpora el aceite de oliva mientras continúas batiendo, hasta que la salsa tenga una
+                    consistencia cremosa. Ajusta la cantidad de aceite según tu preferencia de espesor para la salsa. <br>
+                    * Prueba y ajusta el sabor con sal y pimienta. <br> <br>
+                    3.- Montaje de la ensalada: <br>
+                    *Lava y seca las hojas de lechuga romana y córtalas en trozos más pequeños si lo deseas. <br>
+                    * En un tazón grande, mezcla la lechuga con los crutones. <br>
+                    * Ralla generosamente queso parmesano fresco sobre la ensalada. <br>
+                    * Agrega la cantidad deseada de salsa César y mezcla bien para asegurarte de que todas las hojas estén
+                    cubiertas uniformemente.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/nav-bar.js"></script>
+</body>
+
+</html>
