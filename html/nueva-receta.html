@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/nueva-recetacss.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="icon" type="image/png" href="/imagenes/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,17 +18,22 @@
 
 <body>
 
-    <div class="nav" id="NavBar">
-        <a href="index.html" class="logo-empresa"><img src="/imagenes/icon.png" alt="icon"></a>
-        <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Inicio</a>
-        <a href="#"><i class="fa fa-fw fa-search"></i>Buscar</a>
-        <a href="perfil-usuario.html"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
-        <a href="nueva-receta.html" class="active"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
-        <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
+    <header class="header">
+        <a href="" class="logo">
+            <img src="/imagenes/icon.png" alt="icon-logo">
+            <label for="">Nutricaft Eats</label>
+            <div class="div-menu">
+                <button id="btn-menu"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+            </div>
         </a>
-    </div>
+        <nav class="navbar" id="menu-desplegable">
+            <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Inicio</a>
+            <a href=""><i class="fa fa-fw fa-search"></i>Buscar</a>
+            <a href="perfil-usuario.html"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
+            <a href="nueva-receta.html"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
+            <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
+        </nav>
+    </header>
 
     <div class="main">
 
@@ -66,7 +72,8 @@
 
             <div class="zona-2">
                 <form>
-                    <input type="text" id="nombre-receta" name="nombre-receta" placeholder="Escribe el nombre de tu receta">
+                    <input type="text" id="nombre-receta" name="nombre-receta"
+                        placeholder="Escribe el nombre de tu receta">
                     <label for="ingredientes">Ingredientes:</label>
                     <textarea id="ingredientes" name="ingredientes" rows="4" class="lista-ing"></textarea>
                     <ul id="lista-ingredientes">
@@ -75,8 +82,10 @@
                     <div class="contenedor-botones">
                         <button type="button" id="agregar-ingrediente">+</button>
                         <button type="button" id="eliminar-ingrediente" class="less">-</button>
+                        
                     </div>
                     <div class="guardar">
+                        <button type="button" id="openModalBtn" class="mandar-receta">Modal</button>
                         <button type="button" class="mandar-receta">
                             Subir receta
                         </button>
@@ -84,7 +93,8 @@
                 </form>
 
                 <div class="zona-2-2">
-                    <textarea id="pasos-receta" class="pasos-receta" placeholder="Escriba aqui todos los pasos de su receta en orden"></textarea>
+                    <textarea id="pasos-receta" class="pasos-receta"
+                        placeholder="Escriba aqui todos los pasos de su receta en orden"></textarea>
                     <ul id="nutrimentos-ing" class="nutrimentos-ingredientes">
                         <i>Nutrimentos registradros:</i>
                     </ul>
@@ -96,6 +106,40 @@
 
     </div>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Agrega tus ingredientes</h1>
+            <div class="ingredientes-form">
+                <div class="zona1">
+                    <input type="text" placeholder="Busca los ingredientes aqui...">
+                    <button><i class="fa fa-fw fa-search"></i></button>
+                </div>
+                <div class="zona2">
+                    <select name="ingredientes" id="ingredientes">
+                        <option value="lechuga">Lechuga</option>
+                        <option value="lechuga">Lechuga</option>
+                        <option value="lechuga">Lechuga</option>
+                        <option value="lechuga">Lechuga</option>
+                    </select>
+                    <button><i class="fa fa-fw fa-plus-square"></i></button>
+                </div>
+                <div class="zona3">
+                    <label for="">Ingredientes ya agregados</label>
+                    <ul>
+                        <li>Lechuga</li>
+                        <li>Tomate</li>
+                        <li>Cebolla</li>
+                        <li>Zanahoria</li>
+                        <li>Pepino</li>
+                        <li>Chile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/modal.js"></script>
     <script src="/js/nueva-receta.js"></script>
     <script src="/js/nav-bar.js"></script>
 

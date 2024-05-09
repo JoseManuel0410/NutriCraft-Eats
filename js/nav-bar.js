@@ -1,8 +1,15 @@
-function myFunction() {
-    var x = document.getElementById("NavBar");
-    if (x.className === "nav") {
-      x.className += " responsive";
+var botonMenu = document.getElementById('btn-menu');
+var menuDesplegable = document.getElementById('menu-desplegable');
+var menuVisible = false;
+
+botonMenu.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (!menuVisible) {
+        menuDesplegable.style.display = 'flex';
+        menuVisible = true;
     } else {
-      x.className = "nav";
+        menuDesplegable.style.display = 'none';
+        menuVisible = false;
     }
-  }
+});

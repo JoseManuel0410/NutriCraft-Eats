@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/iniciocss.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="icon" type="image/png" href="/imagenes/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,19 +18,25 @@
 
 <body>
 
-    <div class="nav" id="NavBar">
-        <a href="index.html" class="logo-empresa"><img src="/imagenes/icon.png" alt="icon"></a>
-        <a href="inicio.html" class="active"><i class="fa fa-fw fa-home"></i>Inicio</a>
-        <a href="#"><i class="fa fa-fw fa-search"></i>Buscar</a>
-        <a href="perfil-usuario.html"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
-        <a href="nueva-receta.html"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
-        <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
+    <header class="header">
+        <a href="" class="logo">
+            <img src="/imagenes/icon.png" alt="icon-logo">
+            <label for="">Nutricaft Eats</label>
+            <div class="div-menu">
+                <button id="btn-menu"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+            </div>
         </a>
-    </div>
+        <nav class="navbar" id="menu-desplegable">
+            <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Inicio</a>
+            <a href=""><i class="fa fa-fw fa-search"></i>Buscar</a>
+            <a href="perfil-usuario.html"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
+            <a href="nueva-receta.html"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
+            <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
+        </nav>
+    </header>
 
     <div class="main">
+        
         <div class="zona-1">
 
             <div class="card">
