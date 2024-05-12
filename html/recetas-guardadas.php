@@ -1,3 +1,6 @@
+<?php
+include_once 'obtener_nombre.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +37,7 @@
             <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
         </nav>
     </header>
-    
+
     <div class="main">
 
         <div class="perfil">
@@ -45,12 +48,7 @@
                 <div class="zona-1-2">
 
                     <div class="nombre-seguir">
-                        <h2>Cesar Vega</h2>
-                        <button>
-                            <span class="shadow"></span>
-                            <span class="edge"></span>
-                            <span class="front text">Seguir</span>
-                        </button>
+                        <h2><?php echo $nombreUsuario; ?></h2>
                     </div>
 
                     <div class="datos-usuario">
@@ -65,7 +63,7 @@
 
             </div>
 
-            <h2>Publicaciones</h2>
+            <h2>5 Publicaciones guardadas</h2>
 
             <div class="zona-2">
                 <div class="card">

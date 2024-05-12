@@ -96,7 +96,7 @@
                     <textarea id="pasos-receta" class="pasos-receta"
                         placeholder="Escriba aqui todos los pasos de su receta en orden"></textarea>
                     <ul id="nutrimentos-ing" class="nutrimentos-ingredientes">
-                        <i>Nutrimentos registradros:</i>
+                        <i>Nutrimentos registrados:</i>
                     </ul>
                 </div>
 
@@ -125,7 +125,7 @@
                     <button><i class="fa fa-fw fa-plus-square"></i></button>
                 </div>
                 <div class="zona3">
-                    <label for="">Ingredientes ya agregados</label>
+                    <label for="">Ingredientes agregados</label>
                     <ul>
                         <li>Lechuga</li>
                         <li>Tomate</li>

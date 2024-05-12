@@ -1,3 +1,6 @@
+<?php
+include_once 'obtener_nombre.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -195,7 +198,7 @@
             <div class="zona-usuario">
                 <div class="zona-usuario-2">
                     <img src="/imagenes/user.png" alt="">
-                    <label for="">Cesar Vega</label>
+                    <label for=""><?php echo $nombreUsuario; ?></label>
                 </div>
                 <button>Salir</button>
             </div>
