@@ -6,7 +6,7 @@ if(isset($_SESSION['username'])) {
 
     include_once 'conexion.php'; 
     $conexion = Conexion::conectar(); 
-    $consulta = $conexion->prepare("SELECT usu_nombre FROM usuario WHERE usu_correo = :correo");
+    $consulta = $conexion->prepare("SELECT usu_id, usu_nombre FROM usuario WHERE usu_correo = :correo");
     $consulta->bindParam(':correo', $correo);
     $consulta->execute();
 
@@ -14,6 +14,7 @@ if(isset($_SESSION['username'])) {
 
         $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
         $nombreUsuario = $usuario['usu_nombre'];
+        $idUsuario = $usuario['usu_id'];
         
         echo '<h2>' . $nombreUsuario . '</h2>';
     } else {

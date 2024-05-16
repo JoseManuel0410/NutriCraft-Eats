@@ -1,3 +1,7 @@
+<?php
+require_once 'conexion.php';
+include_once 'obtener_datos.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,11 +31,11 @@
             </div>
         </a>
         <nav class="navbar" id="menu-desplegable">
-            <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Inicio</a>
+            <a href="inicio.php"><i class="fa fa-fw fa-home"></i>Inicio</a>
             <a href=""><i class="fa fa-fw fa-search"></i>Buscar</a>
-            <a href="perfil-usuario.html"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
-            <a href="nueva-receta.html"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
-            <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
+            <a href="perfil-usuario.php"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
+            <a href="nueva-receta.php"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
+            <a href="recetas-guardadas.php"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
         </nav>
     </header>
 
@@ -40,15 +44,14 @@
         <div class="nueva-receta">
 
             <div class="zona-1">
-
-                <form class="dropzone-box">
+                <form class="dropzone-box" enctype="multipart/form-data">
                     <h2>Sube tus fotos aquí</h2>
-                    <p>Arrastra las fotos aqui</p>
+                    <p>Arrastra las fotos aquí</p>
                     <div class="dropzone-area">
                         <div class="file-upload-icon">
                             <img src="/imagenes/file.svg" alt="file-icon">
                         </div>
-                        <p>Haz clic para cargar o arrastra y sueltalo</p>
+                        <p>Haz clic para cargar o arrastra y suéltalo</p>
                         <input type="file" required id="upload-file" name="uploaded-file">
                         <p class="message">No hay archivos seleccionados</p>
                     </div>
@@ -56,18 +59,28 @@
                         <button type="reset">
                             Cancelar
                         </button>
-                        <button id="submit-button" type="submit">
+                        <button id="submit-button" type="button">
                             Guardar
                         </button>
                     </div>
                 </form>
-
+        
                 <div class="contenedor-imagenes">
-                    <img src="/imagenes/receta-ejemplo.jpg">
-                    <img src="/imagenes/receta-ejemplo.jpg">
-                    <img src="/imagenes/receta-ejemplo.jpg">
+                    <?php
+                    require_once 'conexion.php'; // Incluye el archivo de conexión a la base de datos
+        
+                    // Consulta las rutas de las imágenes desde la base de datos
+                    $conn = Conexion::conectar();
+                    $stmt = $conn->query("SELECT ruta FROM imagenes");
+                    $rutasImagenes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+                    $conn = null; // Cierra la conexión
+        
+                    // Genera las etiquetas <img> para cada ruta de imagen
+                    foreach ($rutasImagenes as $ruta) {
+                        echo "<img src='$ruta'>";
+                    }
+                    ?>
                 </div>
-
             </div>
 
             <div class="zona-2">

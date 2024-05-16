@@ -1,5 +1,5 @@
 <?php
-include_once 'obtener_nombre.php';
+include_once 'obtener_datos.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +30,11 @@ include_once 'obtener_nombre.php';
             </div>
         </a>
         <nav class="navbar" id="menu-desplegable">
-            <a href="inicio.html"><i class="fa fa-fw fa-home"></i>Inicio</a>
+            <a href="inicio.php"><i class="fa fa-fw fa-home"></i>Inicio</a>
             <a href=""><i class="fa fa-fw fa-search"></i>Buscar</a>
-            <a href="perfil-usuario.html"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
-            <a href="nueva-receta.html"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
-            <a href="recetas-guardadas.html"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
+            <a href="perfil-usuario.php"><i class="fa fa-fw fa-user-circle"></i>Perfil</a>
+            <a href="nueva-receta.php"><i class="fa fa-fw fa-plus-square"></i>Nueva receta</a>
+            <a href="recetas-guardadas.php"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
         </nav>
     </header>
 
