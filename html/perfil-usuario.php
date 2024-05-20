@@ -9,13 +9,11 @@ include_once 'obtener_datos.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/perfil-usuario.css">
     <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="icon" type="image/png" href="/imagenes/icon.png">
+    <link rel="icon" type="image/png" href="/NutriCraft-Eats/imagenes/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Nutricraft Eats</title>
 </head>
 
@@ -37,7 +35,7 @@ include_once 'obtener_datos.php';
             <a href="recetas-guardadas.php"><i class="fa fa-fw fa-bookmark"></i>Guardadas</a>
         </nav>
     </header>
-    
+
     <div class="main">
 
         <div class="perfil">
@@ -68,46 +66,10 @@ include_once 'obtener_datos.php';
 
             </div>
 
-            <h2>Publicaciones</h2>
+            <?php
+            include_once 'obtener_recetas.php';
+            ?>
 
-            <div class="zona-2">
-                <div class="card">
-                    <div class="card-image"><img src="/imagenes/receta-ejemplo.jpg" alt="foto-receta"></div>
-                    <div class="category"> Pollo a la plancha </div>
-                    <div class="heading"> Receta alta en proteina
-                        <div class="author"> By <span class="name">Cesar vega</span> 4 days ago</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"><img src="/imagenes/receta-ejemplo-2.jpg" alt="foto-receta"></div>
-                    <div class="category">Ensalada cesar</div>
-                    <div class="heading"> Receta saludable
-                        <div class="author"> By <span class="name">Cesar vega</span> 5 days ago</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"><img src="/imagenes/receta-ejemplo.jpg" alt="foto-receta"></div>
-                    <div class="category"> Pollo a la plancha </div>
-                    <div class="heading"> Receta alta en proteina
-                        <div class="author"> By <span class="name">Cesar vega</span> 6 days ago</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"><img src="/imagenes/receta-ejemplo-2.jpg" alt="foto-receta"></div>
-                    <div class="category">Ensalada cesar</div>
-                    <div class="heading"> Receta saludable
-                        <div class="author"> By <span class="name">Cesar vega</span> 7 days ago</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"><img src="/imagenes/receta-ejemplo.jpg" alt="foto-receta"></div>
-                    <div class="category"> Pollo a la plancha </div>
-                    <div class="heading"> Receta alta en proteina
-                        <div class="author"> By <span class="name">Cesar vega</span> 8 days ago</div>
-                    </div>
-                </div>
-
-            </div>
 
         </div>
 

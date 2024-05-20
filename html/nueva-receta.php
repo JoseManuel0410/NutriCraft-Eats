@@ -1,7 +1,6 @@
 <?php
 require_once 'conexion.php';
 include_once 'obtener_datos.php';
-
 $conn = Conexion::conectar();
 
 $sql = "SELECT Nombre, Calorias, Proteinas, Lipidos, Hidratos_de_Carbono FROM Ingredientes";
@@ -78,7 +77,7 @@ if ($result->rowCount() > 0) {
 
                 <div class="contenedor-imagenes">
                     <?php
-                    require_once 'conexion.php';
+                    require_once 'conexion.php'; 
 
                     try {
                         $conn = Conexion::conectar();
@@ -135,8 +134,8 @@ if ($result->rowCount() > 0) {
                     <h1>Agrega tus ingredientes</h1>
                     <div class="ingredientes-form">
                         <div class="zona1">
-                            <input type="text" placeholder="Busca los ingredientes aquí...">
-                            <button><i class="fa fa-fw fa-search"></i></button>
+                            <input type="text" id="modal-buscar-ingredientes" placeholder="Busca los ingredientes aquí...">
+                            <button id="modal-buscar-btn"><i class="fa fa-fw fa-search"></i></button>
                         </div>
                         <div class="zona2">
                             <select name="ingredientes" id="modal-ingredientes">
@@ -151,7 +150,6 @@ if ($result->rowCount() > 0) {
                         <div class="zona3">
                             <label for="">Ingredientes agregados</label>
                             <ul id="modal-lista-ingredientes">
-                                
                             </ul>
                         </div>
                     </div>
@@ -178,6 +176,8 @@ if ($result->rowCount() > 0) {
                     var modalIngredientesSelect = document.getElementById('modal-ingredientes');
                     var openModalBtn = document.getElementById('openModalBtn');
                     var closeModalBtn = document.querySelector('.modal .close');
+                    var modalBuscarInput = document.getElementById('modal-buscar-ingredientes');
+                    var modalBuscarBtn = document.getElementById('modal-buscar-btn');
 
                     var valoresNutricionalesTotales = {
                         Calorias: 0,
@@ -209,6 +209,27 @@ if ($result->rowCount() > 0) {
                         }
                     }
 
+                    function buscarIngredientes() {
+                        var filtro = modalBuscarInput.value.toLowerCase();
+                        var found = false;
+                        for (var i = 0; i < modalIngredientesSelect.options.length; i++) {
+                            var option = modalIngredientesSelect.options[i];
+                            var texto = option.text.toLowerCase();
+                            if (texto.includes(filtro)) {
+                                option.style.display = "";
+                                if (!found) {
+                                    modalIngredientesSelect.selectedIndex = i;
+                                    found = true;
+                                }
+                            } else {
+                                option.style.display = "none";
+                            }
+                        }
+                        if (!found) {
+                            modalIngredientesSelect.selectedIndex = -1;
+                        }
+                    }
+
                     agregarIngredienteBtn.addEventListener('click', function() {
                         var selectedOption = selectIngredientes.options[selectIngredientes.selectedIndex];
                         if (selectedOption) {
@@ -217,7 +238,7 @@ if ($result->rowCount() > 0) {
                         }
                     });
 
-                    modalAgregarBtn.addEventListener('click', function() {
+                     modalAgregarBtn.addEventListener('click', function() {
                         var selectedOption = modalIngredientesSelect.options[modalIngredientesSelect.selectedIndex];
                         if (selectedOption) {
                             var ingrediente = JSON.parse(selectedOption.value);
@@ -229,6 +250,8 @@ if ($result->rowCount() > 0) {
                             agregarIngrediente(ingrediente);
                         }
                     });
+
+                    modalBuscarBtn.addEventListener('click', buscarIngredientes);
 
                     openModalBtn.addEventListener('click', function() {
                         modal.style.display = 'block';
@@ -254,7 +277,7 @@ if ($result->rowCount() > 0) {
                             }
                         });
 
-                        while (rutasImagenes.length < 3) {
+                         while (rutasImagenes.length < 3) {
                             rutasImagenes.push('');
                         }
 

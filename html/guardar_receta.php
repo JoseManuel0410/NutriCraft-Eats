@@ -1,7 +1,6 @@
 <?php
 require_once 'conexion.php'; 
 
-// Obtener los datos del formulario
 $nombreReceta = $_POST['nombre_receta'];
 $pasosReceta = $_POST['pasos'];
 $caloriasTotales = $_POST['calorias_totales'];
@@ -33,7 +32,6 @@ try {
 
     $consulta->execute();
 
-    // Eliminar el contenido de la tabla imagenes
     $consultaEliminar = $conexion->prepare("DELETE FROM imagenes");
     $consultaEliminar->execute();
 
