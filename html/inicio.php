@@ -59,7 +59,6 @@ $usuarios = $consultaUsuarios->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <div class="main">
-
         <div class="zona-1">
             <?php
             if ($consultaRecetas->rowCount() > 0) {
@@ -90,55 +89,70 @@ $usuarios = $consultaUsuarios->fetchAll(PDO::FETCH_ASSOC);
                         $fechaFormateada = $segundosAgo == 1 ? '1 segundo ago' : $segundosAgo . ' segundos ago';
                     }
 
-
                     echo '
-                    <div class="card">
-                        <div class="perfil-card">
-                            <div class="usuario">
-                                <img src="/imagenes/user.png" alt="foto-usuario">
-                                <label for="">' . htmlspecialchars($nombreUsuarios) . '</label>
-                            </div>
-                            <label for="" class="tiempo">' . $fechaFormateada . '</label>
+                <div class="card">
+                    <div class="perfil-card">
+                        <div class="usuario">
+                            <img src="/imagenes/user.png" alt="foto-usuario">
+                            <label for="">' . htmlspecialchars($nombreUsuarios) . '</label>
                         </div>
-                        <div class="etiquetas">
-                            <label for="">Alto en proteina</label>
-                            <label for="">Saludable</label>
-                            <label for="">Dieta</label>
+                        <label for="" class="tiempo">' . $fechaFormateada . '</label>
+                    </div>
+                    <div class="etiquetas">
+                        <label for="">Alto en proteina</label>
+                        <label for="">Saludable</label>
+                        <label for="">Dieta</label>
+                    </div>
+                    <img src="' . htmlspecialchars($rutaImagen) . '" alt="foto-receta">
+                    <label for="">' . htmlspecialchars($nombreReceta) . '</label>
+                    <div class="botones">
+                        <div>
+                            <button class="interacciones" onclick="actualizarLikes(' . $idReceta . ')"><i class="fa fa-fw fa-heart-o"></i></button>
+                            <button class="interacciones" onclick="actualizarComentarios(' . $idReceta . ')"><i class="fa fa-fw fa-commenting-o"></i></button>
+                            <button class="interacciones" onclick="actualizarCompartidos(' . $idReceta . ')"><i class="fa fa-fw fa-paper-plane-o"></i></button>
                         </div>
-                        <img src="' . htmlspecialchars($rutaImagen) . '" alt="foto-receta">
-                        <label for="">' . htmlspecialchars($nombreReceta) . '</label>
-                        <div class="botones">
-                            <div>
-                                <button class="interacciones"><i class="fa fa-fw fa-heart-o"></i></button>
-                                <button class="interacciones"><i class="fa fa-fw fa-commenting-o"></i></button>
-                                <button class="interacciones"><i class="fa fa-fw fa-paper-plane-o"></i></button>
-                            </div>
-                                <button class="interacciones" onclick="guardarRecetas(' . $idReceta . ')"><i class="fa fa-fw fa-bookmark-o"></i></button>
-                        </div>
-                    </div>';
+                        <button class="interacciones" onclick="guardarRecetas(' . $idReceta . ')"><i class="fa fa-fw fa-bookmark-o"></i></button>
+                    </div>
+                </div>';
                 }
             } else {
                 echo "No hay recetas disponibles.";
             }
             ?>
         </div>
+
         <script>
-            function guardarRecetas(idReceta) {
+            function actualizarLikes(idReceta) {
+                enviarSolicitud('like_receta.php', idReceta);
+            }
+
+            function actualizarComentarios(idReceta) {
+                enviarSolicitud('comentario_receta.php', idReceta);
+            }
+
+            function actualizarCompartidos(idReceta) {
+                enviarSolicitud('share_receta.php', idReceta);
+            }
+
+            function enviarSolicitud(url, idReceta) {
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "guardar-recetas.php", true);
+                xhr.open("POST", url, true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onload = function() {
                     if (xhr.status >= 200 && xhr.status < 300) {
                         alert(xhr.responseText);
                     } else {
-                        alert('Hubo un error al guardar la receta.');
+                        alert('Hubo un error.');
                     }
                 };
                 xhr.onerror = function() {
-                    // Si hay un error de red
-                    alert('Error de red al intentar guardar la receta.');
+                    alert('Error de red.');
                 };
                 xhr.send("idReceta=" + idReceta);
+            }
+
+            function guardarRecetas(idReceta) {
+                enviarSolicitud('guardar_recetas.php', idReceta);
             }
         </script>
 
@@ -157,8 +171,6 @@ $usuarios = $consultaUsuarios->fetchAll(PDO::FETCH_ASSOC);
                 </script>
             </div>
 
-
-
             <div class="sugeridos">
                 <label for="">Perfiles sugeridos</label>
                 <?php
@@ -167,25 +179,24 @@ $usuarios = $consultaUsuarios->fetchAll(PDO::FETCH_ASSOC);
                     $textoRecetas = $usuario['total_recetas'] == 1 ? 'Publicación' : 'Publicaciones';
                     if ($usuario['total_recetas'] > 0) {
                         echo '
-                        <div class="zona-usuario">
-                            <div class="zona-usuario-2">
-                                <img src="/imagenes/user.png" alt="">
-                                <div class="zona-usuario-3">
-                                    <label for="">' . htmlspecialchars($usuario['usu_nombre']) . '</label>
-                                    <label for="">' . htmlspecialchars($usuario['total_recetas']) . ' ' . $textoRecetas . '</label>
-                                </div>
+                    <div class="zona-usuario">
+                        <div class="zona-usuario-2">
+                            <img src="/imagenes/user.png" alt="">
+                            <div class="zona-usuario-3">
+                                <label for="">' . htmlspecialchars($usuario['usu_nombre']) . '</label>
+                                <label for="">' . htmlspecialchars($usuario['total_recetas']) . ' ' . $textoRecetas . '</label>
                             </div>
-                            <button>Seguir</button>
-                        </div>';
+                        </div>
+                        <button>Seguir</button>
+                    </div>';
                     }
                 }
                 ?>
             </div>
         </div>
-
     </div>
-    <script src="/js/nav-bar.js"></script>
 
+    <script src="/js/nav-bar.js"></script>
 </body>
 
 </html>
