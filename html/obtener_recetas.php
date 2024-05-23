@@ -12,7 +12,7 @@ if (isset($_SESSION['usu_id']) && isset($_SESSION['usu_nombre'])) {
     $consultaRecetas->bindParam(':idUsuario', $idUsuario);
     $consultaRecetas->execute();
 
-    ?>
+?>
 
     <h2>Publicaciones</h2>
 
@@ -28,9 +28,21 @@ if (isset($_SESSION['usu_id']) && isset($_SESSION['usu_nombre'])) {
 
                 $fechaActual = new DateTime();
                 $diferencia = $fechaActual->diff($fechaSubida);
-                $diasAgo = $diferencia->days;
 
-                $fechaFormateada = $diasAgo == 1 ? '1 día ago' : $diasAgo . ' días ago';
+                $diasAgo = $diferencia->days;
+                $horasAgo = $diferencia->h;
+                $minutosAgo = $diferencia->i;
+                $segundosAgo = $diferencia->s;
+
+                if ($diasAgo >= 1) {
+                    $fechaFormateada = $diasAgo == 1 ? '1 día ago' : $diasAgo . ' días ago';
+                } elseif ($horasAgo >= 1) {
+                    $fechaFormateada = $horasAgo == 1 ? '1 hora ago' : $horasAgo . ' horas ago';
+                } elseif ($minutosAgo >= 1) {
+                    $fechaFormateada = $minutosAgo == 1 ? '1 minuto ago' : $minutosAgo . ' minutos ago';
+                } else {
+                    $fechaFormateada = $segundosAgo == 1 ? '1 segundo ago' : $segundosAgo . ' segundos ago';
+                }
 
                 echo '
                 <div class="card">
