@@ -24,4 +24,3 @@ if (isset($_SESSION['username'])) {
 } else {
     echo "Usuario no autenticado";
 }
-?>

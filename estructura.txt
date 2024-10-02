@@ -1,0 +1,12 @@
+Los archivos de la página han sido reestructurados para facilitar la identificación de su código. 
+Inicialmente, se organizan en dos carpetas principales: src y public.
+
+src: Esta carpeta contiene todo lo relacionado con el backend. 
+Dentro de src se encuentran dos subcarpetas: db y php. En la carpeta db se incluirán los archivos 
+relacionados con la base de datos, como consultas de inserción, la base de datos exportada o la configuración 
+de la conexión. En la carpeta php se agrupan todas las funciones del sitio web, organizadas en
+ subcarpetas que separan las funcionalidades.
+
+public: Esta carpeta alberga todo lo relacionado con el frontend. Dentro de public se
+encuentran las carpetas html, css, images, y js, que contienen los archivos de estructura, estilo, imágenes
+y scripts del sitio web, respectivamente.
