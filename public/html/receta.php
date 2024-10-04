@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+require_once '../src/db/conexion.php';
 
 $conn = Conexion::conectar();
 
@@ -39,9 +39,9 @@ $comentarios = $comentarios_stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/imagenes/icon.png">
-    <link rel="stylesheet" href="/css/recetacss.css">
-    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="icon" type="image/png" href="/public/images/icon.png">
+    <link rel="stylesheet" href="/public/css/recetacss.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,7 @@ $comentarios = $comentarios_stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <header class="header">
         <a href="" class="logo">
-            <img src="/imagenes/icon.png" alt="icon-logo">
+            <img src="/public/images/icon.png" alt="icon-logo">
             <label for="">Nutricaft Eats</label>
             <div class="div-menu">
                 <button id="btn-menu"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
