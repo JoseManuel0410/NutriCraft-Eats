@@ -47,7 +47,7 @@ document.getElementById("submit-button").addEventListener("click", function() {
         const formData = new FormData();
         formData.append("uploaded-file", file);
 
-        fetch("guardar_imagen.php", {
+        fetch("../src/php/recetas/guardar_imagen.php", {
             method: "POST",
             body: formData
         })

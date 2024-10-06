@@ -1,6 +1,6 @@
 <?php
-require_once 'conexion.php';
-include_once 'obtener_datos.php';
+require_once '../src/db/conexion.php';
+include_once '../src/sesion/obtener_datos.php';
 $conn = Conexion::conectar();
 
 $sql = "SELECT Nombre, Calorias, Proteinas, Lipidos, Hidratos_de_Carbono FROM Ingredientes";
@@ -20,9 +20,9 @@ if ($result->rowCount() > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/nueva-recetacss.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="icon" type="image/png" href="/imagenes/icon.png">
+    <link rel="stylesheet" href="/public/css/nueva-recetacss.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="icon" type="image/png" href="/public/images/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@ if ($result->rowCount() > 0) {
 
     <header class="header">
         <a href="" class="logo">
-            <img src="/imagenes/icon.png" alt="icon-logo">
+            <img src="/public/images/icon.png" alt="icon-logo">
             <label for="">Nutricaft Eats</label>
             <div class="div-menu">
                 <button id="btn-menu"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
@@ -59,7 +59,7 @@ if ($result->rowCount() > 0) {
                     <p>Arrastra las fotos aquí</p>
                     <div class="dropzone-area">
                         <div class="file-upload-icon">
-                            <img src="/imagenes/file.svg" alt="file-icon">
+                            <img src="/public/images/file.svg" alt="file-icon">
                         </div>
                         <p>Haz clic para cargar o arrastra y suéltalo</p>
                         <input type="file" required id="upload-file" name="uploaded-file">
@@ -77,7 +77,7 @@ if ($result->rowCount() > 0) {
 
                 <div class="contenedor-imagenes">
                     <?php
-                    require_once 'conexion.php'; 
+                    require_once '../src/db/conexion.php';
 
                     try {
                         $conn = Conexion::conectar();
@@ -283,7 +283,7 @@ if ($result->rowCount() > 0) {
 
                         $.ajax({
                             type: "POST",
-                            url: "guardar_receta.php",
+                            url: "../src/php/recetas/guardar_receta.php",
                             data: {
                                 nombre_receta: nombreReceta,
                                 pasos: pasosReceta,

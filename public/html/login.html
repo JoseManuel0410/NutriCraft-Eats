@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/logincss.css">
+    <link rel="stylesheet" href="/public/css/logincss.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="/imagenes/icon.png">
+    <link rel="icon" type="image/png" href="/public/images/icon.png">
     <title>NutriCraft Eats</title>
 </head>
 
 <body>
     <div class="contenedor-login">
-        <img src="/Imagenes/user.png">
+        <img src="/public/images/user.png">
         <h2>Iniciar Sesión</h2>
-        <form method="post" action="login.php">
+        <form method="post" action="/src/php/sesion/login.php">
             <div class="grupo-input">
                 <label for="username">Correo electronico</label>
                 <input type="text" id="username" name="username" required>
