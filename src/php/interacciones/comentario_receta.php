@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $idReceta = $_POST['idReceta'];
 
     $conexion = Conexion::conectar();
-    $updateComments = $conexion->prepare("UPDATE Recetas SET comentarios = comentarios + 1 WHERE id = :idReceta");
+    $updateComments = $conexion->prepare("UPDATE recetas SET comentarios = comentarios + 1 WHERE id = :idReceta");
     $updateComments->bindParam(':idReceta', $idReceta, PDO::PARAM_INT);
     if ($updateComments->execute()) {
         echo "Comentario añadido";

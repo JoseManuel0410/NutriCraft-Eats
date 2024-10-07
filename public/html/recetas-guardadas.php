@@ -10,7 +10,7 @@ if (isset($_SESSION['usu_id'])) {
     $consultaRecetasGuardadas = $conexion->prepare("
         SELECT r.*, u.usu_nombre 
         FROM Recetas_Guardadas rg 
-        JOIN Recetas r ON rg.id_receta = r.id
+        JOIN recetas r ON rg.id_receta = r.id
         JOIN usuario u ON r.usu_id = u.usu_id
         WHERE rg.id_usuario = :idUsuario
     ");

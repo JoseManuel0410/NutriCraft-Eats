@@ -8,7 +8,7 @@ if (isset($_SESSION['usu_id']) && isset($_SESSION['usu_nombre'])) {
     $idUsuario = $_SESSION['usu_id'];
     $nombreUsuario = $_SESSION['usu_nombre'];
 
-    $consultaRecetas = $conexion->prepare("SELECT * FROM Recetas WHERE usu_id = :idUsuario");
+    $consultaRecetas = $conexion->prepare("SELECT * FROM recetas WHERE usu_id = :idUsuario");
     $consultaRecetas->bindParam(':idUsuario', $idUsuario);
     $consultaRecetas->execute();
 

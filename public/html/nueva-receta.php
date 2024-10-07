@@ -3,7 +3,7 @@ require_once '../src/db/conexion.php';
 include_once '../src/sesion/obtener_datos.php';
 $conn = Conexion::conectar();
 
-$sql = "SELECT Nombre, Calorias, Proteinas, Lipidos, Hidratos_de_Carbono FROM Ingredientes";
+$sql = "SELECT Nombre, Calorias, Proteinas, Lipidos, Hidratos_de_Carbono FROM ingredientes";
 $result = $conn->query($sql);
 
 $ingredientes = [];

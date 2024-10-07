@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $consulta_insertar->bindParam(':contrasena', $contrasena);
     $consulta_insertar->execute();
 // Redirigir al usuario a la página de inicio después del registro exitoso
-    header("Location: inicio.html");
+    header("Location: inicio.php");
     exit();
 }
 ?>

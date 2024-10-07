@@ -6,14 +6,13 @@ $conexion = Conexion::conectar();
 
 $consultaTopRecetas = $conexion->prepare("
     SELECT id, nombre_receta, ruta1, likes 
-    FROM Recetas 
+    FROM recetas
     ORDER BY likes DESC 
     LIMIT 4
 ");
 $consultaTopRecetas->execute();
 $topRecetas = $consultaTopRecetas->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

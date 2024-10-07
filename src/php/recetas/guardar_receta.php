@@ -15,7 +15,7 @@ $usu_id = $_POST['usu_id'];
 
 try {
     $conexion = Conexion::conectar();
-    $consulta = $conexion->prepare("INSERT INTO Recetas (nombre_receta, pasos, calorias_totales, proteinas_totales, lipidos_totales, hidratos_de_carbono_totales, ingredientes, ruta1, ruta2, ruta3, usu_id) VALUES (:nombre_receta, :pasos, :calorias_totales, :proteinas_totales, :lipidos_totales, :hidratos_de_carbono_totales, :ingredientes, :ruta1, :ruta2, :ruta3, :usu_id)");
+    $consulta = $conexion->prepare("INSERT INTO recetas (nombre_receta, pasos, calorias_totales, proteinas_totales, lipidos_totales, hidratos_de_carbono_totales, ingredientes, ruta1, ruta2, ruta3, usu_id) VALUES (:nombre_receta, :pasos, :calorias_totales, :proteinas_totales, :lipidos_totales, :hidratos_de_carbono_totales, :ingredientes, :ruta1, :ruta2, :ruta3, :usu_id)");
     $consulta->bindParam(':nombre_receta', $nombreReceta);
     $consulta->bindParam(':pasos', $pasosReceta);
     $consulta->bindParam(':calorias_totales', $caloriasTotales);

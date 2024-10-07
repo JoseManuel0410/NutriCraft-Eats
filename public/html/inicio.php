@@ -8,13 +8,13 @@ $idUsuarioActual = $_SESSION['usu_id'];
 
 $consultaRecetas = $conexion->prepare("
     SELECT r.*, u.usu_nombre 
-    FROM Recetas r 
+    FROM recetas r 
     JOIN usuario u ON r.usu_id = u.usu_id
 ");
 $consultaUsuarios = $conexion->prepare("
     SELECT u.usu_id, u.usu_nombre, COUNT(r.id) as total_recetas 
     FROM usuario u 
-    LEFT JOIN Recetas r ON u.usu_id = r.usu_id 
+    LEFT JOIN recetas r ON u.usu_id = r.usu_id 
     WHERE u.usu_id <> :idUsuarioActual 
     GROUP BY u.usu_id, u.usu_nombre
 ");

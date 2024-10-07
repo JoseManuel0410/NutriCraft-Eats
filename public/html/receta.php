@@ -10,8 +10,8 @@ $stmt = $conn->prepare("
     SELECT r.nombre_receta, r.fecha_subida, r.calorias_totales, r.proteinas_totales, r.lipidos_totales, 
            r.hidratos_de_carbono_totales, r.ingredientes, r.pasos, r.ruta1, r.ruta2, r.ruta3, 
            r.likes, r.comentarios, r.compartidas, u.nombre as usuario, u.foto 
-    FROM Recetas r 
-    JOIN usuarios u ON r.usu_id = u.id 
+    FROM recetas r 
+    JOIN usuario u ON r.usu_id = u.id 
     WHERE r.id = :id
 ");
 $stmt->bindParam(':id', $id_receta, PDO::PARAM_INT);
