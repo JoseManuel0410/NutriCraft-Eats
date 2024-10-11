@@ -1,5 +1,5 @@
 <?php
-include_once 'conexion.php';
+include_once 'src/db/conexion/conexion.php';
 
 // Verificar si se enviaron los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,7 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $consulta_insertar->bindParam(':contrasena', $contrasena);
     $consulta_insertar->execute();
 // Redirigir al usuario a la página de inicio después del registro exitoso
+<<<<<<< HEAD
     header("Location: inicio.php");
+=======
+    header("Location: public/html/inicio.php");
+>>>>>>> e429baf (cambios: varios)
     exit();
 }
 ?>

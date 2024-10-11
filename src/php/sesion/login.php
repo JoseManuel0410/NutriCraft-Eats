@@ -1,5 +1,5 @@
 <?php
-include_once 'conexion.php';
+include_once 'src/db/conexion/conexion.php';
 
 // Verificar si se enviaron los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

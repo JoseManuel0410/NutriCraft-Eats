@@ -1,17 +1,21 @@
 <?php
 session_start();
-include_once 'conexion.php';
+include_once 'src/db/conexion/conexion.php';
 
 $conexion = Conexion::conectar();
 
-$consultaTopRecetas = $conexion->prepare("
+/* $consultaTopRecetas = $conexion->prepare("
     SELECT id, nombre_receta, ruta1, likes 
+<<<<<<< HEAD
     FROM recetas
+=======
+    FROM recetas 
+>>>>>>> e429baf (cambios: varios)
     ORDER BY likes DESC 
     LIMIT 4
-");
-$consultaTopRecetas->execute();
-$topRecetas = $consultaTopRecetas->fetchAll(PDO::FETCH_ASSOC);
+"); */
+//$consultaTopRecetas->execute();
+//$topRecetas = $consultaTopRecetas->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +23,8 @@ $topRecetas = $consultaTopRecetas->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/indexcss.css">
-    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="public/css/indexcss.css">
+    <link rel="stylesheet" href="public/css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Nutricaft Eats</title>
 </head>
@@ -36,10 +40,10 @@ $topRecetas = $consultaTopRecetas->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </a>
         <nav class="navbar" id="menu-desplegable">
-            <a href="inicio.php"><i class="fa fa-fw fa-home"></i>Inicio</a>
+            <a href="public/html/inicio.php"><i class="fa fa-fw fa-home"></i>Inicio</a>
             <a href=""><i class="fa fa-fw fa-search"></i>Buscar</a>
-            <a href="login.html"><i class="fa fa-fw fa-sign-in"></i>Iniciar sesión</a>
-            <a href="registro.html"><i class="fa fa-fw fa-address-card-o"></i>Registro</a>
+            <a href="public/html/login.html"><i class="fa fa-fw fa-sign-in"></i>Iniciar sesión</a>
+            <a href="public/html/registro.html"><i class="fa fa-fw fa-address-card-o"></i>Registro</a>
         </nav>
     </header>
 
@@ -65,13 +69,13 @@ $topRecetas = $consultaTopRecetas->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($topRecetas as $receta) {
                         $rutaImagen = str_replace("https://nutricraft-eats.000webhostapp.com", "", $receta['ruta1']);
                         $nombreReceta = htmlspecialchars($receta['nombre_receta']);
-                        $likes = $receta['likes'];
+                        //$likes = $receta['likes'];
 
                         echo '
                         <div class="receta">
                             <img src="' . htmlspecialchars($rutaImagen) . '" alt="Receta ' . htmlspecialchars($nombreReceta) . '">
                             <h3>' . $nombreReceta . '</h3>
-                            <p><span class="like-icon">&#10084;</span> ' . $likes . ' likes</p>
+                          //  <p><span class="like-icon">&#10084;</span> ' . $likes . ' likes</p>
                         </div>';
                     }
                 } else {
