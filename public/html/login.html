@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/logincss.css">
+    <link rel="stylesheet" href="/public/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,17 +16,19 @@
 
 <body>
     <div class="contenedor-login">
-        <img src="/public/images/user.png">
+       <!-- <img src="/public/images/user.png"> -->
         <h2>Iniciar Sesión</h2>
         <form method="post" action="/src/php/sesion/login.php">
             <div class="grupo-input">
-                <label for="username">Correo electronico</label>
+                
                 <input type="text" id="username" name="username" required>
+		<label for="username">Correo electronico</label>
             </div>
             <div class="grupo-input">
-                <label for="password">Contraseña</label>
+              
                 <input type="password" id="password" name="password" required>
-                <p style="cursor: pointer;">Forgot password?</p>
+                <label for="password">Contraseña</label>
+		<p style="cursor: pointer;">Forgot password?</p>
             </div>
             <button type="submit">Iniciar Sesión</button>
         </form>

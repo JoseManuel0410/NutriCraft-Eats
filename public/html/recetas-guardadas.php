@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once '../src/sesion/obtener_datos.php';
-require_once '../src/db/conexion.php';
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/src/db/conexion/conexion.php');
 $conexion = Conexion::conectar();
 
 if (isset($_SESSION['usu_id'])) {

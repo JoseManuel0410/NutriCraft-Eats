@@ -1,6 +1,6 @@
 <?php
-require_once '../src/db/conexion.php';
-include_once '../src/sesion/obtener_datos.php';
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/src/db/conexion/conexion.php');
+include_once ($_SERVER['DOCUMENT_ROOT'] . '/src/sesion/obtener_datos.php');
 $conn = Conexion::conectar();
 
 $sql = "SELECT Nombre, Calorias, Proteinas, Lipidos, Hidratos_de_Carbono FROM ingredientes";

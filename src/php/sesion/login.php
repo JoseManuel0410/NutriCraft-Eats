@@ -1,6 +1,6 @@
 <?php
-include_once 'src/db/conexion/conexion.php';
-
+//include_once 'src/db/conexion/conexion.php';
+include ($_SERVER['DOCUMENT_ROOT'] . "/src/db/conexion/conexion.php");
 // Verificar si se enviaron los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Iniciar sesión y redirigir al usuario a la página de inicio
         session_start();
         $_SESSION['username'] = $correo;
-        header("location: inicio.html");
+        header("location: ../../../public/html/inicio.php");
         exit();
     } else {
         // Si no se encontró el usuario, mostrar un mensaje de error

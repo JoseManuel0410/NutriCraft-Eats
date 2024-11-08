@@ -1,5 +1,5 @@
 <?php
-require_once '../src/db/conexion.php';
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/src/db/conexion/conexion.php');
 
 $conn = Conexion::conectar();
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/registrocss.css">
+    <link rel="stylesheet" href="/public/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,24 +15,24 @@
 <body>
     <body>
         <div class="contenedor-login">
-            <img src="/public/images/user.png">
+        <!--    <img src="/public/images/user.png"> -->
             <h2>Registrate</h2>
             <form method="post" action="/src/php/sesion/registro.php">
                 <div class="grupo-input">
-                    <label for="username">Usuario</label>
                     <input type="text" id="nombre" name="nombre" required>
+		    <label for="usuario">Usuario</label>
                 </div>
                 <div class="grupo-input">
-                    <label for="username">Correo electronico</label>
                     <input type="text" id="username" name="username" required>
+		    <label for="username">Correo electronico</label>
                 </div>
                 <div class="grupo-input">
-                    <label for="password">Contraseña</label>
                     <input type="password" id="password" name="password" required>
+		    <label for="password">Contraseña</label>
                 </div>
                 <div class="grupo-input">
-                    <label for="password">Confirma tu contraseña</label>
                     <input type="password" id="confirm_password" name="confirm_password" required>
+		    <label for="password">Confirmar Contraseña</label>
                 </div>
                 <button type="submit">Registrate</button>
             </form>

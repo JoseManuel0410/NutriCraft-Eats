@@ -4,8 +4,8 @@ session_start();
 if (isset($_SESSION['username'])) {
     $correo = $_SESSION['username'];
 
-    include_once 'conexion.php';
-    $conexion = Conexion::conectar();
+    include($_SERVER['DOCUMENT_ROOT'] . 'src/db/conexion/conexion.php');
+     $conexion = Conexion::conectar();
     $consulta = $conexion->prepare("SELECT usu_id, usu_nombre FROM usuario WHERE usu_correo = :correo");
     $consulta->bindParam(':correo', $correo);
     $consulta->execute();

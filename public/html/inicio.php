@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once '../src/sesion/obtener_datos.php';
-require_once '../src/db/conexion.php';
+include_once ($_SERVER['DOCUMENT_ROOT'] . '/src/sesion/obtener_datos.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/src/db/conexion/conexion.php');
 
 $conexion = Conexion::conectar();
 $idUsuarioActual = $_SESSION['usu_id'];
@@ -166,7 +166,7 @@ $usuarios = $consultaUsuarios->fetchAll(PDO::FETCH_ASSOC);
 
                 <script>
                     function cerrarSesion() {
-                        window.location.href = "cerrar_sesion.php";
+                        window.location.href = "/src/php/sesion/cerrar_sesion.php";
                     }
                 </script>
             </div>
