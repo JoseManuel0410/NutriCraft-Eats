@@ -20,6 +20,32 @@ if (isset($_SESSION['usu_id'])) {
     header('Location: iniciar-sesion.php');
     exit();
 }
+
+// Consulta de recetas guardadas por el usuario
+$consultaRecetasGuardadas = $conexion->prepare("
+    SELECT r.*, u.usu_nombre 
+    FROM Recetas_Guardadas rg 
+    JOIN recetas r ON rg.id_receta = r.id
+    JOIN usuario u ON r.usu_id = u.usu_id
+    WHERE rg.id_usuario = :idUsuario
+");
+$consultaRecetasGuardadas->bindParam(':idUsuario', $idUsuario);
+$consultaRecetasGuardadas->execute();
+
+// Función para obtener ingredientes de una receta
+function obtenerIngredientesPorReceta($conexion, $recetaId) {
+    $consultaIngredientes = $conexion->prepare("
+        SELECT i.Nombre, i.Calorias, c.NombreCategoria
+        FROM ingredientes i
+        JOIN categorias c ON i.CategoriaID = c.CategoriaID
+        WHERE i.ingrediente_id IN (
+            SELECT ingrediente_id FROM recetas_ingredientes WHERE receta_id = :recetaId
+        )
+    ");
+    $consultaIngredientes->bindParam(':recetaId', $recetaId);
+    $consultaIngredientes->execute();
+    return $consultaIngredientes->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +56,7 @@ if (isset($_SESSION['usu_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/perfil-usuario.css">
     <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/listadecompras.css">
     <link rel="icon" type="image/png" href="/public/images/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,8 +147,20 @@ if (isset($_SESSION['usu_id'])) {
 
     </div>
 
-    <script src="/js/nav-bar.js"></script>
+    <!-- Modal para lista de compras -->
+<div id="shopping-list-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Lista de Compras</h2>
+    <div id="shopping-list-container">
+      <!-- Los ingredientes se cargarán dinámicamente aquí -->
+    </div>
+  </div>
+</div>
+
+<script src="/public/js/nav-bar.js"></script>
+<script src="/public/js/recetas-guardadas.js"></script>
+<script src="/js/nav-bar.js"></script>
 
 </body>
-
 </html>

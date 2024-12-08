@@ -1,0 +1,187 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    color: #d87f1a;
+    margin-bottom: 10px;
+  }
+  
+  .recipe-selection {
+    margin-bottom: 30px;
+  }
+  
+  .recipe-selection h2 {
+    font-size: 1.5rem;
+    color: #ffa500;
+    margin-bottom: 10px;
+  }
+  
+  .recipe-option {
+    margin-bottom: 10px;
+  }
+  
+  .recipe-option input {
+    margin-right: 10px;
+  }
+  
+  .recipe-option label {
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+
+  .shopping-list {
+    margin-bottom: 30px;
+  }
+  
+  .shopping-list h2 {
+    font-size: 1.5rem;
+    color: #ffa500;
+    margin-bottom: 10px;
+  }
+  
+  #shopping-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  #shopping-list li {
+    background-color: #fff;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #shopping-list li:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  #shopping-list li span {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  #shopping-list li button {
+    background-color: #ff5722;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  #shopping-list li button:hover {
+    background-color: #e64a19;
+  }
+  
+  /* Estilos para el formulario de personalización */
+  .customization {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .customization h2 {
+    font-size: 1.5rem;
+    color: #4caf50;
+    margin-bottom: 15px;
+  }
+  
+  .customization form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .customization input,
+  .customization select,
+  .customization button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .customization button {
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .customization button:hover {
+    background-color: #ffa500;
+  }
+  
+  .customization input[type="number"] {
+    width: 100px;
+  }
+  
+  .customization select {
+    width: 200px;
+  }
+  
+  /* Estilo para el pie de página */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+  }
+  
+  @media (max-width: 768px) {
+    .recipe-selection,
+    .shopping-list,
+    .customization {
+      margin: 10px 0;
+    }
+  
+    .customization form {
+      flex-direction: column;
+    }
+  }
+  
