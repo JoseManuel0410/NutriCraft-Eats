@@ -21,18 +21,7 @@ if (isset($_SESSION['usu_id'])) {
     exit();
 }
 
-// Consulta de recetas guardadas por el usuario
-$consultaRecetasGuardadas = $conexion->prepare("
-    SELECT r.*, u.usu_nombre 
-    FROM Recetas_Guardadas rg 
-    JOIN recetas r ON rg.id_receta = r.id
-    JOIN usuario u ON r.usu_id = u.usu_id
-    WHERE rg.id_usuario = :idUsuario
-");
-$consultaRecetasGuardadas->bindParam(':idUsuario', $idUsuario);
-$consultaRecetasGuardadas->execute();
-
-// Función para obtener ingredientes de una receta
+// Obtener los ingredientes de las recetas
 function obtenerIngredientesPorReceta($conexion, $recetaId) {
     $consultaIngredientes = $conexion->prepare("
         SELECT i.Nombre, i.Calorias, c.NombreCategoria
@@ -134,6 +123,7 @@ function obtenerIngredientesPorReceta($conexion, $recetaId) {
                     <div class="category">' . htmlspecialchars($nombreReceta) . '</div>
                     <div class="heading"> Receta alta en proteina
                         <div class="author"> By <span class="name">' . htmlspecialchars($nombreUsuarioReceta) . '</span> ' . $fechaFormateada . '</div>
+                        <button class="generate-list-btn" data-receta-id="' . $recetaId . '">Generar Lista</button>
                     </div>
                 </div>';
                     }
@@ -148,18 +138,17 @@ function obtenerIngredientesPorReceta($conexion, $recetaId) {
     </div>
 
     <!-- Modal para lista de compras -->
-<div id="shopping-list-modal" class="modal">
+<div id="modal-listacompras" class="modal">
   <div class="modal-content">
     <span class="close-modal">&times;</span>
     <h2>Lista de Compras</h2>
-    <div id="shopping-list-container">
-      <!-- Los ingredientes se cargarán dinámicamente aquí -->
+    <div id="container-listacompras">
     </div>
   </div>
 </div>
 
 <script src="/public/js/nav-bar.js"></script>
-<script src="/public/js/recetas-guardadas.js"></script>
+<script src="/public/js/listadecompras.js"></script>
 <script src="/js/nav-bar.js"></script>
 
 </body>

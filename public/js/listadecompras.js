@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("shopping-list-modal");
+    const modal = document.getElementById("modal-listacompras");
     const closeModal = document.querySelector(".close-modal");
     const generateListButton = document.querySelectorAll(".generate-list-btn");
-    const shoppingListContainer = document.getElementById("shopping-list-container");
+    const shoppingListContainer = document.getElementById("contenedor-listacompras");
   
     generateListButton.forEach(button => {
       button.addEventListener("click", async () => {
         const recetaId = button.dataset.recetaId;
   
         try {
-          const response = await fetch(`/src/api/generar_lista.php`, {
+          const response = await fetch(`/src/generar_lista.php`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
